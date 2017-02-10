@@ -40,15 +40,19 @@ $(function () {
 
     var navigation = $('.menu');
     var navButton  = $('.menu-btn');
+    var navAnchors = $('.menu').find('a');
     
-
     navButton.on('click', function () {
-        console.log(navigation.css('display'));
         navButton.toggleClass('change');
         if (navigation.css('display') == 'block') {
             navigation.css('display', 'none');
         } else {
             navigation.css('display', 'block');
+
+            navAnchors.on('click', function(){
+                navigation.css('display', 'none');
+                navButton.removeClass('change');
+            });
         }
     });
 

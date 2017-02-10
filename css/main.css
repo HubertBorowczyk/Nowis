@@ -53,13 +53,18 @@ section {
 @media screen and (min-width: 768px) {
   .sticky {
     margin-top: 0;
-    height: 50px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .sticky .content .logo {
     height: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sticky .content .menu {
+    top: 50px;
   }
 }
 
@@ -101,7 +106,7 @@ nav {
 @media screen and (min-width: 768px) {
   nav {
     margin-top: 50px;
-    height: 90px;
+    height: 100px;
   }
 }
 
@@ -132,7 +137,7 @@ nav .content .menu {
 
 @media screen and (max-width: 767px) {
   nav .content .menu {
-    margin-top: 11px;
+    top: 100px;
     background-color: rgba(41, 44, 47, 0.8);
     width: 100%;
     position: absolute;
@@ -189,6 +194,12 @@ nav .content .menu li a:after {
 
 nav .content .menu li a:hover::after {
   width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  nav .content .menu li a:hover::after {
+    width: 0;
+  }
 }
 
 nav .menu-btn {

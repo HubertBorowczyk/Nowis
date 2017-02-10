@@ -32,7 +32,6 @@ section{
 	background:$gray_color;
 	@include breakpoint(tablet){
 		margin-top:0;
-		height:50px;
 	}
 	.content{	
 		.logo{
@@ -41,6 +40,9 @@ section{
 			}
 		}
 		.menu{
+			@media screen and (max-width:767px){
+				top:50px;
+			}
 			li{
 				a{
 					@include breakpoint(tablet){
@@ -68,7 +70,7 @@ nav{
 	transition: all 0.3s ease;
 	@include breakpoint(tablet) {
 		margin-top:50px;
-		height:90px;
+		height:100px;
 	}
 	.content{
 		@media screen and (max-width:768px){
@@ -88,7 +90,7 @@ nav{
 		.menu{
 			list-style: none;
 			@media screen and (max-width:767px){
-				margin-top:11px;
+				top:100px;
 				background-color: rgba($gray_color,0.8);
 				width:100%;
 				position:absolute;
@@ -130,6 +132,9 @@ nav{
 					}
 					&:hover::after {
 						width: 100%;
+						@media screen and (max-width:767px){
+							width: 0;
+						}
 					}
 				}
 
