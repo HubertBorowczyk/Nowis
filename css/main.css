@@ -178,12 +178,17 @@ nav .content .menu li a {
   }
 }
 
-nav .content .menu li a:hover {
-  color: #5293d8;
+nav .content .menu li a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 4px;
+  background: #5293d8;
+  transition: width .3s;
 }
 
-nav .content .menu li a:active {
-  color: #5293d8;
+nav .content .menu li a:hover::after {
+  width: 100%;
 }
 
 nav .menu-btn {
@@ -432,6 +437,7 @@ header .content .motto {
 
 .contact .address h3 {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .contact .address p:nth-child(5) {
@@ -480,6 +486,7 @@ form {
 form .form_label {
   display: block;
   font-size: 16px;
+  text-align: center;
   -webkit-transform: translateY(25px);
           transform: translateY(25px);
   color: #5293d8;
@@ -580,12 +587,12 @@ form .submit_btn:hover .insider {
 
 .btn {
   display: block;
-  width: 80vw;
+  width: 70vw;
   height: 3rem;
   margin: 1rem auto;
   border-radius: 5px;
-  background-color: #5293d8;
-  border: 0;
+  background-color: transparent;
+  border: 1px solid #5293d8;
   font-size: 2rem;
 }
 
@@ -597,7 +604,7 @@ form .submit_btn:hover .insider {
 
 .btn a {
   text-decoration: none;
-  color: white;
+  color: #5293d8;
 }
 
 /*# sourceMappingURL=main.css.map */
