@@ -45,6 +45,11 @@ section {
   color: wheat;
 }
 
+a {
+  text-decoration: none;
+  color: wheat;
+}
+
 .sticky {
   height: 50px;
   background: #292c2f;
@@ -515,6 +520,11 @@ form .form_input {
   color: wheat;
 }
 
+form .form_input:-webkit-autofill {
+  color: wheat !important;
+  background-color: transparent !important;
+}
+
 form .form_div {
   padding: 30px 0 0 0;
   position: relative;
@@ -607,6 +617,10 @@ form .submit_btn:hover .insider {
   font-size: 2rem;
 }
 
+.btn:first-of-type {
+  margin-top: 3rem;
+}
+
 @media screen and (min-width: 768px) {
   .btn {
     display: none;
@@ -616,6 +630,48 @@ form .submit_btn:hover .insider {
 .btn a {
   text-decoration: none;
   color: #5293d8;
+}
+
+footer {
+  width: 100vw;
+  max-width: 100%;
+  min-height: 50px;
+  background-color: #292c2f;
+  color: wheat;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .content {
+  width: 90vw;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  footer .content {
+    width: 80vw;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  footer .content {
+    width: 80vw;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
