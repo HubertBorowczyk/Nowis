@@ -1,3 +1,10 @@
+/*
+ * Created on Sun Feb 12 2017
+ *
+ * Copyright (c) 2017 Hubert Borowczyk
+ */
+
+
 *{
   margin: 0;
   padding: 0;
@@ -31,6 +38,15 @@ a{
 	text-decoration: none;
 	color:wheat;
 }
+
+
+/**
+ *
+ * sticky class for sticky menu
+ *
+ */
+
+
 .sticky{
 	height:50px;
 	background:$gray_color;
@@ -57,6 +73,13 @@ a{
 		}
 	}
 }
+
+
+/*=============================================
+=            nav section            =
+=============================================*/
+
+
 nav{
 	display:flex;
 	flex-direction: row;
@@ -145,7 +168,11 @@ nav{
 			}
 		}
 	}
-			/*-------menu button for mobile navigation--------*/
+			
+
+/*----------  menu button  ----------*/
+		
+			
 	.menu-btn {
 		display: inline-block;
 		float: right;
@@ -180,27 +207,11 @@ nav{
 	}
 }
 
-header{
-	background-image: url("../img/gears.jpg");
-	background-attachment: fixed;
-	display:flex;
-	flex-direction: column;
-	justify-content:center;
-	.content{
-		justify-content: center;
-		.motto{
-			margin:0;
-			font-size:3rem;
-			color: wheat;
-			display:block;
-			text-align: center;
-			@include breakpoint(tablet) {
-				font-size:7rem;
-			};
-		}	
-	}
 
-}
+/*=====  End of nav section  ======*/
+
+
+
 .section_title{
 	position:relative;
 	left:0;
@@ -222,6 +233,43 @@ box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.75);
 		font-size:1.4rem;
 	};
 }
+
+
+/*=============================================
+=            header section            =
+=============================================*/
+
+
+header{
+	background-image: url("../img/gears.jpg");
+	background-attachment: fixed;
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	.content{
+		justify-content: center;
+		.motto{
+			margin:0;
+			font-size:3rem;
+			color: wheat;
+			display:block;
+			text-align: center;
+			@include breakpoint(tablet) {
+				font-size:7rem;
+			};
+		}	
+	}
+
+}
+
+/*=====  End of header section  ======*/
+
+
+/*=============================================
+=            offer section            =
+=============================================*/
+
+
 .offer{
 	background-image:url("../img/bg.jpg");
 	font-size:1rem;
@@ -303,6 +351,16 @@ box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.75);
 	}
 
 }
+
+
+/*=====  End of offer section  ======*/
+
+
+/*=============================================
+=            contact section            =
+=============================================*/
+
+
 .contact{
 	background-image:url("../img/Gears2.jpg");
 	background-attachment: fixed;
@@ -369,6 +427,10 @@ box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.75);
 		}
 	}
 }
+
+/*----------  contact form  ----------*/
+
+
 form{
 	display:none;
 	@include breakpoint(tablet) {
@@ -465,6 +527,11 @@ form{
 		}
 	}
 }
+
+
+/*----------  mobile contact buttons  ----------*/
+
+
 .btn{
 	display:block;
 	width:70vw;
@@ -488,6 +555,16 @@ form{
 		margin-bottom: 50px;
 	}
 }
+
+
+/*=====  End of contact section  ======*/
+
+
+/*=============================================
+=            footer           =
+=============================================*/
+
+
 footer{
 	width:100vw;
 	max-width:100%;
@@ -510,3 +587,7 @@ footer{
 		}
 	}
 }
+
+
+/*=====  End of footer  ======*/
+

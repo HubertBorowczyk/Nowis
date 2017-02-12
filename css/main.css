@@ -1,3 +1,8 @@
+/*
+ * Created on Sun Feb 12 2017
+ *
+ * Copyright (c) 2017 Hubert Borowczyk
+ */
 * {
   margin: 0;
   padding: 0;
@@ -50,6 +55,11 @@ a {
   color: wheat;
 }
 
+/**
+ *
+ * sticky class for sticky menu
+ *
+ */
 .sticky {
   height: 50px;
   background: #292c2f;
@@ -79,6 +89,9 @@ a {
   }
 }
 
+/*=============================================
+=            nav section            =
+=============================================*/
 nav {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -102,7 +115,7 @@ nav {
   margin-right: auto;
   background-color: rgba(41, 44, 47, 0.8);
   transition: all 0.3s ease;
-  /*-------menu button for mobile navigation--------*/
+  /*----------  menu button  ----------*/
   /* Rotate first bar */
   /* Fade out the second bar */
   /* Rotate last bar */
@@ -240,6 +253,39 @@ nav .change .bar3 {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
+/*=====  End of nav section  ======*/
+.section_title {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0 auto 2rem;
+  width: 35vw;
+  height: 3rem;
+  background-color: #5293d8;
+  color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (min-width: 768px) {
+  .section_title {
+    font-size: 1.4rem;
+  }
+}
+
+/*=============================================
+=            header section            =
+=============================================*/
 header {
   background-image: url("../img/gears.jpg");
   background-attachment: fixed;
@@ -274,35 +320,10 @@ header .content .motto {
   }
 }
 
-.section_title {
-  position: relative;
-  left: 0;
-  right: 0;
-  margin: 0 auto 2rem;
-  width: 35vw;
-  height: 3rem;
-  background-color: #5293d8;
-  color: white;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.75);
-}
-
-@media screen and (min-width: 768px) {
-  .section_title {
-    font-size: 1.4rem;
-  }
-}
-
+/*=====  End of header section  ======*/
+/*=============================================
+=            offer section            =
+=============================================*/
 .offer {
   background-image: url("../img/bg.jpg");
   font-size: 1rem;
@@ -392,6 +413,10 @@ header .content .motto {
   }
 }
 
+/*=====  End of offer section  ======*/
+/*=============================================
+=            contact section            =
+=============================================*/
 .contact {
   background-image: url("../img/Gears2.jpg");
   background-attachment: fixed;
@@ -484,6 +509,7 @@ header .content .motto {
   color: #5293d8;
 }
 
+/*----------  contact form  ----------*/
 form {
   display: none;
 }
@@ -606,6 +632,7 @@ form .submit_btn:hover .insider {
   left: 140px;
 }
 
+/*----------  mobile contact buttons  ----------*/
 .btn {
   display: block;
   width: 70vw;
@@ -636,6 +663,10 @@ form .submit_btn:hover .insider {
   margin-bottom: 50px;
 }
 
+/*=====  End of contact section  ======*/
+/*=============================================
+=            footer           =
+=============================================*/
 footer {
   width: 100vw;
   max-width: 100%;
@@ -677,5 +708,7 @@ footer .content {
     width: 80vw;
   }
 }
+
+/*=====  End of footer  ======*/
 
 /*# sourceMappingURL=main.css.map */

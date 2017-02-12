@@ -1,6 +1,9 @@
-/**
- * Created by hubert on 07.01.17.
+/*
+ * Created on Sun Feb 12 2017
+ *
+ * Copyright (c) 2017 Hubert Borowczyk
  */
+
 
 $(function () {
 
@@ -56,6 +59,8 @@ $(function () {
         }
     });
 
+    // ------------media query - toggle mobile menu display------------
+
     function test_match_media_with_listener() {
         var mq = window.matchMedia('(min-width:768px)');
         mq.addListener(widthChange);
@@ -74,8 +79,9 @@ $(function () {
 
     test_match_media_with_listener();
 
+    // ------------sticky menu-------------------
+
     function stickyMenu() {
-        // var navElement   = $('nav');
         var menu         = $('nav');
         var menuPosition = menu.offset().top;
 
