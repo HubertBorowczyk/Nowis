@@ -299,7 +299,7 @@ header .content .motto {
 
 @media screen and (min-width: 768px) {
   .section_title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -322,7 +322,7 @@ header .content .motto {
   padding-bottom: 10px;
   vertical-align: middle;
   font-weight: 100;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 
 .offer .list {
@@ -630,6 +630,10 @@ form .submit_btn:hover .insider {
 .btn a {
   text-decoration: none;
   color: #5293d8;
+}
+
+.btn:last-child {
+  margin-bottom: 50px;
 }
 
 footer {
