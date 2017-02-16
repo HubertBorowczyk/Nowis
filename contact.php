@@ -1,5 +1,5 @@
 <?php
-// error_reporting(0);
+error_reporting(0);
 	if($_SERVER["REQUEST_METHOD"] == "POST") {	
 
 		function check_input($input){
@@ -13,7 +13,7 @@
 		$email         = check_input($_POST['email']);		
 		$message       = check_input($_POST['message']);
 		$validation_OK = true;
-		$email_to      = "hubertborowczyk@gmail.com";
+		$email_to      = "s.nowak@nowis.tech";
 		$email_subject = "Wiadomość ze strony nowis.tech";
 				
 		$string_exp = "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u";
