@@ -30,7 +30,7 @@ $(function () {
     $(".form_input").focusout(function () {
         if ($(this).val() === "")
             $(this).parent().removeClass("is-completed");
-        $(this).parent().removeClass("is-active");
+            $(this).parent().removeClass("is-active");
     });
 
     // ------- custom scrollbar in textarea ----------
@@ -47,7 +47,7 @@ $(function () {
     
     navButton.on('click', function () {
         navButton.toggleClass('change');
-        if (navigation.css('display') == 'block') {
+        if (navigation.css('display') === 'block') {
             navigation.css('display', 'none');
         } else {
             navigation.css('display', 'block');
@@ -97,4 +97,70 @@ $(function () {
     }   
     
     stickyMenu();
+
+    // ------------form validation--------------
+
+    function formValidation(){
+        var form       = $('#form');
+        var inputs     = $(form).find(':input').not('button');
+        var valid      = true;
+        inputs.on('focus', function(){
+                if($(this).hasClass('form_error')){
+                    $(this).val('').removeClass('form_error');
+                    valid = true;
+                }
+
+        });
+        form.on('submit', function(e){
+            e.preventDefault();            
+            inputs.each(function(){
+                var self = $(this);
+                if(self.val() === ''){
+                    valid = false;
+                    self.parent().addClass('is-active is-completed');
+                    self.addClass('form_error').val('Wypełnij pole'); 
+                }
+            });
+            if(valid){
+                var newMessage = {
+                    'name':    inputs[0].value,
+                    'email':   inputs[1].value,
+                    'message': inputs[2].value
+                }
+                $.ajax({
+                    type: 'post',
+                    url: 'contact.php',
+                    data: newMessage
+                }).done(function(res){
+                    var form_info = $('.form_info');
+                    form_info
+                        .html('')
+                        .removeClass('visible')
+                        .html(res);
+                    if(res === 'Twoja wiadomość została wysłana <br>'){
+                        form_info  
+                            .addClass('visible')
+                            .css('color', 'green');
+                        setTimeout(function(){
+                            form_info.removeClass('visible');
+                        },3000);
+
+                        inputs.each(function(){
+                            var self = $(this);
+                            self.val('');
+                            self.parent().removeClass("is-completed");
+                            self.parent().removeClass("is-active");
+                        });
+                    }else{
+                        form_info
+                            .addClass('visible')
+                            .css('color', 'red');
+                    }
+                }).fail(function(err){
+                    console.log(err);
+                });
+            }
+        });
+    };  
+    formValidation();
 });

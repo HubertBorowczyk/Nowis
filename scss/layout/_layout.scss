@@ -377,6 +377,7 @@ header{
 		@include breakpoint(desktop) {
 			width:60vw;
 			justify-content: space-around;
+			align-items: stretch;
 		};
 	}
 	img{
@@ -491,6 +492,10 @@ form{
 	textarea{
 		resize:none;
 	}
+	.form_error{
+		color:red;
+		text-align: center;
+	}
 	.submit_btn {
 		outline:none;
 		border:none;
@@ -526,7 +531,24 @@ form{
 			}
 		}
 	}
+	
 }
+.form_info{
+		width:60%;
+		display:block;
+		min-height:2rem;
+		height: auto;
+		margin:0 auto 40px;
+		text-align: center;
+		font-size: 1.2rem;
+		visibility: hidden;
+		background-color: wheat;
+		border-radius: 5px;
+}
+.visible{
+	visibility:visible;
+}
+
 
 
 /*----------  mobile contact buttons  ----------*/

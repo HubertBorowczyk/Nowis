@@ -438,6 +438,9 @@ header .content .motto {
     -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
             justify-content: space-around;
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
   }
 }
 
@@ -593,6 +596,11 @@ form textarea {
   resize: none;
 }
 
+form .form_error {
+  color: red;
+  text-align: center;
+}
+
 form .submit_btn {
   outline: none;
   border: none;
@@ -630,6 +638,23 @@ form .submit_btn:hover {
 form .submit_btn:hover .insider {
   transition: all 0.3s ease;
   left: 140px;
+}
+
+.form_info {
+  width: 60%;
+  display: block;
+  min-height: 2rem;
+  height: auto;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  visibility: hidden;
+  background-color: wheat;
+  border-radius: 5px;
+}
+
+.visible {
+  visibility: visible;
 }
 
 /*----------  mobile contact buttons  ----------*/
