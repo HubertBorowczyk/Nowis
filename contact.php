@@ -13,29 +13,34 @@ error_reporting(0);
 		$email         = check_input($_POST['email']);		
 		$message       = check_input($_POST['message']);
 		$validation_OK = true;
-		$email_to      = "s.nowak@nowis.tech";
-		$email_subject = "Wiadomość ze strony nowis.tech";
-				
-		$string_exp = "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u";
+		$error         = '';
+
+		//name validation	
+		$string_exp = "([\w ]+)";
 		
 		if(!preg_match($string_exp,$name)) {			
 			$validation_OK = false;
-			echo('Sprawdź pole "imię i nazwisko" <br>');			
+			$error .= 'Sprawdź pole "imię i nazwisko" <br>';			
 		}
 
+		//email validation
 		$email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
 		
 		if(!preg_match($email_exp,$email)) {
 			$validation_OK = false;		
-			echo ('Podany adres email jest nieprawidłowy <br>');		
+			$error .= 'Podany adres email jest nieprawidłowy <br>';		
 		}
 		
+		//check message length
 		if(strlen($message) < 5) {	
 			$validation_OK = false;
-			echo('Wiadomość musi posiadać minimum 5 znaków <br>');	
+			$error .= 'Wiadomość musi posiadać minimum 5 znaków <br>';	
 		}
-
+		
+		//if all ok -> send mail
 		if($validation_OK){
+			$email_to      = "s.nowak@nowis.tech";
+			$email_subject = "Wiadomość ze strony nowis.tech";
 			$email_message = "Masz nową wiadomość wysłaną przez formularz na twojej stronie nowis.tech:\r\n\r\n<br><br>";	
 			$email_message .= "Wiadomość od: ".$name."\r\n<br>";		
 			$email_message .= "Email: ".$email."\r\n<br><br>";		
@@ -47,9 +52,15 @@ error_reporting(0);
 			$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 			$headers .='Reply-To: '.$email."\r\n";
 
-			mail($email_to, $email_subject, $email_message, $headers);	
+			$mailSend = mail($email_to, $email_subject, $email_message, $headers);	
 
-			echo('Twoja wiadomość została wysłana <br>');	
+			if($mailSend){
+				echo('Twoja wiadomość została wysłana <br>');	
+			} else{
+				echo('Problem z dostarczeniem wiadomości. Spróbuj jeszcze raz');
+			}
+		} else {
+			echo $error;
 		}
 	}
 ?>

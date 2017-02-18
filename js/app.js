@@ -10,15 +10,15 @@ $(function () {
     //  ------ Page scroll ----------
 
     $('a[href^="#"]').on('click', function (event) {
-
-        var target = $($(this).attr('href'));
-
+        var target = $( this ).attr( 'href' );
         if (target.length) {
-            event.preventDefault();
+            event.preventDefault();        
             $('html, body').animate({
-                scrollTop: target.offset().top - 50
-            }, 1000);
-        }
+                scrollTop: $(target).offset().top - 50
+            }, 600, function(){
+                location.hash = target;
+            });
+        }      
     });
 
     // ---------- materialize inputs -----------
